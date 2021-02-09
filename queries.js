@@ -1,19 +1,18 @@
-// // const PORT = require('dotenv')
-// const port = process.env.API_PORT;
-// const database = process.env.API_DATABASE;
-// const host = process.env.API_HOST;
-// const user = process.env.API_USER;
-// const password = process.env.API_PASSWORD;
-// console.log(`Your port is ${port}`);
+const port = process.env.API_PORT;
+const database = process.env.API_DATABASE;
+const host = process.env.API_HOST;
+const user = process.env.API_USER;
+const password = process.env.API_PASSWORD;
+console.log(`Your port is ${port}`);
 
-// const Pool = require('pg').Pool
-// const pool = new Pool({
-//     user: user,
-//     host: host,
-//     database: database,
-//     password: password,
-//     port: port,
-// })
+const Pool = require('pg').Pool
+const pool = new Pool({
+    user: user,
+    host: host,
+    database: database,
+    password: password,
+    port: port,
+})
 
 const getUsers = (request, response) => {
     pool.query('SELECT * FROM users ORDER BY id ASC', (error, results) => {
