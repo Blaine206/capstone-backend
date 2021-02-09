@@ -1,3 +1,4 @@
+require('dotenv').config()
 const port = process.env.API_PORT;
 const database = process.env.API_DATABASE;
 const host = process.env.API_HOST;
@@ -13,7 +14,8 @@ const pool = new Pool({
     password: password,
     port: port,
 })
-
+console.log(Pool)
+console.log(pool)
 const getUsers = (request, response) => {
     pool.query('SELECT * FROM users ORDER BY id ASC', (error, results) => {
         if (error) {
