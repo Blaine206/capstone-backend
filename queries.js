@@ -15,10 +15,8 @@ const pool = new Pool({
     port: port,
 })
 
-console.log(Pool)
-console.log(pool)
-
 const getEvents = (request, response) => {
+    console.log("hey, got here!")
     pool.query('SELECT * FROM events ORDER BY id ASC', (error, results) => {
         if (error) {
             throw error
